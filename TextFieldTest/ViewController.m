@@ -9,15 +9,22 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad
+
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    [_textField becomeFirstResponder];
+
+}
+- (IBAction)dismissKeyboard:(id)sender {
+    [_textField resignFirstResponder];
+    
 }
 
 - (void)didReceiveMemoryWarning
